@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="oramirezj-wd">
+    <meta name="description" content="Página de productos de una óptica, con carrito de compras usando local storage">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <title>Productos - Óptica San Gabriel</title>
+    <link rel="stylesheet" href="./css/normalyse.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    
+</head>
+<body>
+    <header class="header">
+        <a href="./index.html">
+            <img class="header__logo" src="./img/OPTICA SAN GABRIEL.png" alt="Logo óptica San Gabriel">
+        </a>
+    </header>    
+    <nav class="navegacion">
+        <div class="navegacion__enlace--principales">
+            <a class="navegacion__enlace" href=".#">Home </a>
+             <a class="navegacion__enlace" href="./index.html">Productos</a> <!--Se trabaja solo esta página para el proyecto CRUD -->
+            <a class="navegacion__enlace" href="#">Nosotros</a>
+            <a class="navegacion__enlace" href="#">Contacto</a>
+        </div>
+        <div class="navegacion__enlace">
+            <a class="navegacion__enlace" href="#">Registro/Ingreso</a>
+        </div>
+    </nav>
+    <main class="container">
+        <section class="productos">
+            <h1>Nuestros Productos</h1> 
+            <div class="grid productos__grid"> 
+                <div class="producto">
+                    <picture>
+                        <source srcset="./img/01.webp" type="image/webp">
+                        <img src="./img/01.jpg" alt="armazón 1">
+                    </picture>
+                    <h3 class="producto__nombre">Armazón 1</h3>
+                </div>
+                <div class="producto">
+                    <picture>
+                        <source srcset="./img/02.webp" type="image/webp">
+                        <img src="./img/02.jpg" alt="armazón 2">
+                    </picture>
+                    <h3 class="producto__nombre">Armazón 2</h3>
+                </div>
+                <div class="producto">
+                    <picture>
+                        <source srcset="./img/03.webp" type="image/webp">
+                        <img src="./img/03.jpg" alt="armazón 3">
+                    </picture>
+                    <h3 class="producto__nombre">Armazón 3</h3>
+                </div>
+                <div class="producto">
+                    <picture>
+                        <source srcset="./img/04.webp" type="image/webp">
+                        <img src="./img/04.jpg" alt="armazón 4">
+                    </picture>
+                    <h3 class="producto__nombre">Armazón 4</h3>
+                </div>
+                <div class="producto">
+                    <picture>
+                        <source srcset="./img/05.webp" type="image/webp">
+                        <img src="./img/05.jpg" alt="armazón 5">
+                    </picture>
+                    <h3 class="producto__nombre">Armazón 5</h3>
+                </div>
+                <div class="producto">
+                    <picture>
+                        <source srcset="./img/06.webp" type="image/webp">
+                        <img src="./img/06.jpg" alt="armazón 6">
+                    </picture>
+                    <h3 class="producto__nombre">Armazón 6</h3>
+                </div>
+                <div class="producto">
+                    <picture>
+                        <source srcset="./img/07.webp" type="image/webp">
+                        <img src="./img/07.jpg" alt="armazón 7">
+                    </picture>
+                    <h3 class="producto__nombre">Armazón 7</h3>
+                </div>
+                <div class="producto">
+                    <picture>
+                        <source srcset="./img/08.webp" type="image/webp">
+                        <img src="./img/08.jpg" alt="armazón 8">
+                    </picture>
+                    <h3 class="producto__nombre">Armazón 8</h3>
+                </div>
+                <div class="producto">
+                    <picture>
+                        <source srcset="./img/09.webp" type="image/webp">
+                        <img src="./img/09.jpg" alt="armazón 9">
+                    </picture>
+                    <h3 class="producto__nombre">Armazón 9</h3>
+                </div>
+                <div class="producto">
+                    <picture>
+                        <source srcset="./img/10.webp" type="image/webp">
+                        <img src="./img/10.jpg" alt="armazón 10">
+                    </picture>
+                    <h3 class="producto__nombre">Armazón 10</h3>
+                </div>
+                <div class="producto">
+                    <picture>
+                        <source srcset="./img/11.webp" type="image/webp">
+                        <img src="./img/11.jpg" alt="armazón 11">
+                    </picture>
+                    <h3 class="producto__nombre">Armazón 11</h3>
+                </div>
+                <div class="producto">
+                    <picture>
+                        <source srcset="./img/12.webp" type="image/webp">
+                        <img src="./img/12.jpg" alt="armazón 12">
+                    </picture>
+                    <h3 class="producto__nombre">Armazón 12</h3>
+                </div>
+            </div>
+        </section>         
+    </main>
+    <footer class="footer">
+        <div class="footer__contenido">
+            <div class="footer__columna">
+                <h3>Óptica San Gabriel</h3>
+                <p>Dirección: Cavadas #72, Colonia Centro</p>
+                <p>Teléfono: (352) 522-6429</p>
+                <p>Correo electrónico: optsangrabriel@gmail.com</p>
+            </div>
+            <div class="footer__columna">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="./index.html">Productos</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer__columna">
+                <h3>Síguenos en redes sociales</h3>
+                <ul class="footer__redes">
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li> 
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li> 
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li> 
+                </ul>
+            </div>
+        </div>
+        <div class="footer__derechos">
+            <p>&copy; 2024 Óptica San Gabriel. Todos los derechos reservados.</p>
+            <p>Página con fines educativos</p>
+        </div>
+        <script src="./js/main.js"></script>
+    </footer>
+</body>
+</html>
