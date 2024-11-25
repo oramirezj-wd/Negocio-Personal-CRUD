@@ -67,11 +67,16 @@ function obtenerCarrito() {
     let carrito = obtenerCarrito();
     let total = 0;
   
-    carritoLista.innerHTML = ''; 
+    carritoLista.innerHTML = ''; // Limpiar la lista
   
     if (carrito.length === 0) {
-      carritoLista.innerHTML = '<li class="carrito-vacio">Tu carrito está vacío.</li>';
+      // Si el carrito está vacío, agregar el mensaje
+      const li = document.createElement("li");
+      li.classList.add("carrito-vacio"); 
+      li.textContent = "Tu carrito está vacío.";
+      carritoLista.appendChild(li);
     } else {
+      // Si hay productos, mostrarlos
       carrito.forEach(producto => {
         const li = document.createElement('li');
         li.innerHTML = `
@@ -86,7 +91,6 @@ function obtenerCarrito() {
         // Agregar event listeners para los botones de "Editar" y "Eliminar"
         const botonEditar = li.querySelector('.carrito-editar');
         botonEditar.addEventListener('click', () => {
-          // Implementar la lógica para editar la cantidad
           const nuevaCantidad = prompt("Ingrese la nueva cantidad:", producto.cantidad);
           if (nuevaCantidad !== null) {
             editarCantidad(producto.id, parseInt(nuevaCantidad));
@@ -130,5 +134,6 @@ function obtenerCarrito() {
   
   // Mostrar el carrito al cargar la página
   document.addEventListener("DOMContentLoaded", () => {
-    mostrarCarrito();
+    actualizarCarritoUI();
   });
+  
