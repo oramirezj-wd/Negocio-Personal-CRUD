@@ -18,6 +18,23 @@
         <a href="./index.html">
             <img class="header__logo" src="./img/OPTICA SAN GABRIEL.png" alt="Logo óptica San Gabriel">
         </a>
+        <div class="header__carrito">
+            <div class="carrito-icono">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="carrito-count" class="carrito-contador">0</span>
+            </div>
+            <!-- Dropdown del carrito -->
+            <div class="carrito-dropdown">
+                <h3>Tu Carrito</h3>
+                <ul id="carrito-lista" class="carrito-lista">
+                    <li class="carrito-vacio">Tu carrito está vacío.</li>
+                </ul>
+                <div class="carrito-total">
+                    <p>Total: <span id="carrito-total">$0.00</span></p>
+                </div>
+                <button class="carrito-vaciar">Vaciar Carrito</button>
+            </div>
+        </div>
     </header>    
     <nav class="navegacion">
         <div class="navegacion__enlace--principales">
@@ -40,6 +57,8 @@
                         <img src="./img/01.jpg" alt="armazón 1">
                     </picture>
                     <h3 class="producto__nombre">Armazón 1</h3>
+                    <p class="producto__precio" id="precio-1">$ 4,500</p>
+                    <button class="producto__btn-agregar" data-id="1">Agregar al carrito</button>
                 </div>
                 <div class="producto">
                     <picture>
@@ -47,6 +66,8 @@
                         <img src="./img/02.jpg" alt="armazón 2">
                     </picture>
                     <h3 class="producto__nombre">Armazón 2</h3>
+                    <p class="producto__precio" id="precio-2">$ 4,300</p>
+                    <button class="producto__btn-agregar" data-id="2">Agregar al carrito</button>
                 </div>
                 <div class="producto">
                     <picture>
@@ -54,6 +75,8 @@
                         <img src="./img/03.jpg" alt="armazón 3">
                     </picture>
                     <h3 class="producto__nombre">Armazón 3</h3>
+                    <p class="producto__precio" id="precio-3">$ 4,000</p>
+                    <button class="producto__btn-agregar" data-id="3">Agregar al carrito</button>
                 </div>
                 <div class="producto">
                     <picture>
@@ -61,6 +84,8 @@
                         <img src="./img/04.jpg" alt="armazón 4">
                     </picture>
                     <h3 class="producto__nombre">Armazón 4</h3>
+                    <p class="producto__precio" id="precio-4">$ 3,500</p>
+                    <button class="producto__btn-agregar" data-id="4">Agregar al carrito</button>
                 </div>
                 <div class="producto">
                     <picture>
@@ -68,6 +93,8 @@
                         <img src="./img/05.jpg" alt="armazón 5">
                     </picture>
                     <h3 class="producto__nombre">Armazón 5</h3>
+                    <p class="producto__precio" id="precio-5">$ 1,500</p>
+                    <button class="producto__btn-agregar" data-id="5">Agregar al carrito</button>
                 </div>
                 <div class="producto">
                     <picture>
@@ -75,6 +102,8 @@
                         <img src="./img/06.jpg" alt="armazón 6">
                     </picture>
                     <h3 class="producto__nombre">Armazón 6</h3>
+                    <p class="producto__precio" id="precio-6">$ 1,400</p>
+                    <button class="producto__btn-agregar" data-id="6">Agregar al carrito</button>
                 </div>
                 <div class="producto">
                     <picture>
@@ -82,6 +111,8 @@
                         <img src="./img/07.jpg" alt="armazón 7">
                     </picture>
                     <h3 class="producto__nombre">Armazón 7</h3>
+                    <p class="producto__precio" id="precio-7">$ 1,600</p>
+                    <button class="producto__btn-agregar" data-id="7">Agregar al carrito</button>
                 </div>
                 <div class="producto">
                     <picture>
@@ -89,6 +120,8 @@
                         <img src="./img/08.jpg" alt="armazón 8">
                     </picture>
                     <h3 class="producto__nombre">Armazón 8</h3>
+                    <p class="producto__precio" id="precio-8">$ 1,400</p>
+                    <button class="producto__btn-agregar" data-id="8">Agregar al carrito</button>
                 </div>
                 <div class="producto">
                     <picture>
@@ -96,6 +129,8 @@
                         <img src="./img/09.jpg" alt="armazón 9">
                     </picture>
                     <h3 class="producto__nombre">Armazón 9</h3>
+                    <p class="producto__precio" id="precio-9">$ 4,600</p>
+                    <button class="producto__btn-agregar" data-id="9">Agregar al carrito</button>
                 </div>
                 <div class="producto">
                     <picture>
@@ -103,6 +138,8 @@
                         <img src="./img/10.jpg" alt="armazón 10">
                     </picture>
                     <h3 class="producto__nombre">Armazón 10</h3>
+                    <p class="producto__precio" id="precio-10">$ 1,200</p>
+                    <button class="producto__btn-agregar" data-id="10">Agregar al carrito</button>
                 </div>
                 <div class="producto">
                     <picture>
@@ -110,6 +147,8 @@
                         <img src="./img/11.jpg" alt="armazón 11">
                     </picture>
                     <h3 class="producto__nombre">Armazón 11</h3>
+                    <p class="producto__precio" id="precio-11">$ 1,500</p>
+                    <button class="producto__btn-agregar" data-id="11">Agregar al carrito</button>
                 </div>
                 <div class="producto">
                     <picture>
@@ -117,6 +156,8 @@
                         <img src="./img/12.jpg" alt="armazón 12">
                     </picture>
                     <h3 class="producto__nombre">Armazón 12</h3>
+                    <p class="producto__precio" id="precio-12">$ 1,700</p>
+                    <button class="producto__btn-agregar" data-id="12">Agregar al carrito</button>
                 </div>
             </div>
         </section>         
