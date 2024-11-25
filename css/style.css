@@ -358,7 +358,7 @@ h3 {
 
 /* Logo */
 .header__logo {
-    max-height: 20rem; /* Ajusta el tamaño del logo */
+    max-height: 20rem; 
 }
 
 /* Contenedor del carrito */
@@ -379,7 +379,7 @@ h3 {
 
 .carrito-icono i {
     font-size: 4.5rem;
-    color: var(--primarioOscuro); /* Gris oscuro */
+    color: var(--primarioOscuro); 
     transition: transform 0.2s ease;
 }
 
