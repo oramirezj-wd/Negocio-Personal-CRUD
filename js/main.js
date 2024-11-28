@@ -107,7 +107,7 @@ function obtenerCarrito() {
     }
   
     carritoCount.textContent = carrito.reduce((acc, item) => acc + item.cantidad, 0);
-    carritoTotal.textContent = `$${total.toFixed(2)}`;
+    carritoTotal.textContent = `$${total.toFixed(0)}`;
   }
   
   // Event listeners para los botones "Agregar al carrito"
@@ -136,4 +136,21 @@ function obtenerCarrito() {
   document.addEventListener("DOMContentLoaded", () => {
     actualizarCarritoUI();
   });
+
+  // Event listener para el botón "Vaciar Carrito"
+const botonVaciarCarrito = document.getElementById('carrito-vaciar');
+
+botonVaciarCarrito.addEventListener('click', () => {
+  vaciarCarrito();
+});
+function vaciarCarrito() {
+    try {
+      // Eliminar el carrito de localStorage
+      localStorage.removeItem('carrito');
   
+      // Actualizar la UI del carrito
+      actualizarCarritoUI();
+    } catch (error) {
+      console.error("Error al vaciar el carrito:", error);
+    }
+  }
