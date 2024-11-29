@@ -488,3 +488,28 @@ h3 {
     color: var(--textoOscuro); /* Color gris oscuro */
     font-weight: bold;
 }
+/* Estilo para cada item del carrito */
+.carrito-item {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    font-size: 1.4rem; /* Ajusta el tamaño de fuente */
+    margin-bottom: 1rem; /* Espacio entre items */
+  }
+  
+  .carrito-item__imagen {
+    width: 50px; /* Ajusta el tamaño de la imagen */
+    height: 50px;
+    margin-right: 1rem; /* Espacio entre la imagen y el texto */
+  }
+  
+  .carrito-item__detalles {
+    flex-grow: 1; /* Permite que los detalles ocupen el espacio disponible */
+  }
+  
+  .carrito-item__nombre {
+    font-weight: bold; /* Nombre del producto en negrita */
+  }
+  
+  .carrito-item__botones {
+    white-space: nowrap; /* Evita que los botones se separen en varias líneas */
+  }

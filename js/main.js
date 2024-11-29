@@ -58,8 +58,9 @@ function obtenerCarrito() {
     }
   }
   
-  // Función para actualizar la UI del carrito
-  function actualizarCarritoUI() {
+ 
+// Función para actualizar la UI del carrito
+function actualizarCarritoUI() {
     const carritoLista = document.getElementById('carrito-lista');
     const carritoCount = document.getElementById('carrito-count');
     const carritoTotal = document.getElementById('carrito-total');
@@ -80,26 +81,32 @@ function obtenerCarrito() {
       carrito.forEach(producto => {
         const li = document.createElement('li');
         li.innerHTML = `
-          <p>${producto.nombre} - Cantidad: ${producto.cantidad}</p>
-          <p>Precio unitario: $${producto.precio.toFixed(2)}</p>
-          <p>Subtotal: $${(producto.precio * producto.cantidad).toFixed(2)}</p>
-          <button class="carrito-editar" data-id="${producto.id}">Editar</button>
-          <button class="carrito-eliminar" data-id="${producto.id}">Eliminar</button>
-        `;
+        <div class="carrito-item"> 
+            <img class="carrito-item__imagen" src="./img/${producto.id}.jpg" alt="${producto.nombre}">
+            <div class="carrito-item__detalles">
+            <p class="carrito-item__nombre">${producto.nombre}</p>
+            <p class="carrito-item__cantidad">Cantidad: ${producto.cantidad}</p>
+            <p class="carrito-item__precio">Precio unitario: $${producto.precio.toLocaleString()}</p>
+            <p class="carrito-item__subtotal">Subtotal: $${(producto.precio * producto.cantidad).toLocaleString()}</p>
+        </div>
+        <div class="carrito-item__botones">
+            <button class="carrito-sumar" data-id="${producto.id}">+</button>
+            <button class="carrito-restar" data-id="${producto.id}">-</button>
+            </div>
+        </div>
+`;
+console.log(producto.id)
         carritoLista.appendChild(li);
   
-        // Agregar event listeners para los botones de "Editar" y "Eliminar"
-        const botonEditar = li.querySelector('.carrito-editar');
-        botonEditar.addEventListener('click', () => {
-          const nuevaCantidad = prompt("Ingrese la nueva cantidad:", producto.cantidad);
-          if (nuevaCantidad !== null) {
-            editarCantidad(producto.id, parseInt(nuevaCantidad));
-          }
+        // Event listeners para los botones "+" y "-"
+        const botonSumar = li.querySelector('.carrito-sumar');
+        botonSumar.addEventListener('click', () => {
+          aumentarCantidad(producto.id);
         });
   
-        const botonEliminar = li.querySelector('.carrito-eliminar');
-        botonEliminar.addEventListener('click', () => {
-          eliminarDelCarrito(producto.id);
+        const botonRestar = li.querySelector('.carrito-restar');
+        botonRestar.addEventListener('click', () => {
+          disminuirCantidad(producto.id);
         });
   
         total += producto.precio * producto.cantidad;
@@ -107,8 +114,34 @@ function obtenerCarrito() {
     }
   
     carritoCount.textContent = carrito.reduce((acc, item) => acc + item.cantidad, 0);
-    carritoTotal.textContent = `$${total.toFixed(0)}`;
+    carritoTotal.textContent = `$${total.toLocaleString()}`;
   }
+  
+  // Funciones para aumentar/disminuir cantidad
+  function aumentarCantidad(productoId) {
+    let carrito = obtenerCarrito();
+    const producto = carrito.find(item => item.id === productoId);
+    if (producto) {
+      producto.cantidad++;
+      guardarCarrito(carrito);
+      actualizarCarritoUI();
+    }
+  }
+  
+  function disminuirCantidad(productoId) {
+    let carrito = obtenerCarrito();
+    const producto = carrito.find(item => item.id === productoId);
+    if (producto) {
+      if (producto.cantidad === 1) {
+        eliminarDelCarrito(productoId);
+      } else {
+        producto.cantidad--;
+        guardarCarrito(carrito);
+        actualizarCarritoUI();
+      }
+    }
+  }
+  
   
   // Event listeners para los botones "Agregar al carrito"
   const botonesAgregar = document.querySelectorAll('.producto__btn-agregar');
