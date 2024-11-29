@@ -82,8 +82,11 @@ function actualizarCarritoUI() {
         const li = document.createElement('li');
         li.innerHTML = `
         <div class="carrito-item"> 
-            <img class="carrito-item__imagen" src="./img/${producto.id}.jpg" alt="${producto.nombre}">
             <div class="carrito-item__detalles">
+            <picture>
+                <source srcset="./img/${producto.id < 10 ? '0' + producto.id : producto.id}.webp" type="image/webp">
+                <img class="carrito-item__imagen" src="./img/${producto.id < 10 ? '0' + producto.id : producto.id}.jpg" alt="${producto.nombre}">
+            </picture>
             <p class="carrito-item__nombre">${producto.nombre}</p>
             <p class="carrito-item__cantidad">Cantidad: ${producto.cantidad}</p>
             <p class="carrito-item__precio">Precio unitario: $${producto.precio.toLocaleString()}</p>
@@ -95,7 +98,6 @@ function actualizarCarritoUI() {
             </div>
         </div>
 `;
-console.log(producto.id)
         carritoLista.appendChild(li);
   
         // Event listeners para los botones "+" y "-"

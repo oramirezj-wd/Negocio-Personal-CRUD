@@ -260,6 +260,20 @@ h3 {
     gap: 2rem; 
 }
 
+/* Media Query para tablets (768px o menos) */
+@media (max-width: 768px) {
+    .productos__grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
+    }
+}
+
+/* Media Query para móviles (480px o menos) */
+@media (max-width: 480px) {
+    .productos__grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
+    }
+}
+
 /* Estilo de cada producto */
 .producto {
     background-color: #f0f0f0; /* Gris claro de fondo */
@@ -483,33 +497,66 @@ h3 {
 }
 /* Precio del producto */
 .producto__precio {
-    margin: 0.5rem 0;
+    margin: 0.1rem 0;
     font-size: 2.2rem;
     color: var(--textoOscuro); /* Color gris oscuro */
     font-weight: bold;
 }
 /* Estilo para cada item del carrito */
 .carrito-item {
-    display: flex;
-    align-items: center; /* Centra verticalmente */
-    font-size: 1.4rem; /* Ajusta el tamaño de fuente */
-    margin-bottom: 1rem; /* Espacio entre items */
-  }
-  
-  .carrito-item__imagen {
-    width: 50px; /* Ajusta el tamaño de la imagen */
+    display: flex;                /* Coloca todos los elementos en una fila */
+    align-items: center;          /* Centra los elementos verticalmente */
+    justify-content: space-between;/* Distribuye los elementos entre espacio disponible */
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;              /* Permite que los elementos se ajusten si el espacio es insuficiente */
+}
+
+/* Imagen del producto */
+.carrito-item__imagen {
+    width: 50px;                  /* Ajusta el tamaño de la imagen */
     height: 50px;
-    margin-right: 1rem; /* Espacio entre la imagen y el texto */
-  }
-  
-  .carrito-item__detalles {
-    flex-grow: 1; /* Permite que los detalles ocupen el espacio disponible */
-  }
-  
-  .carrito-item__nombre {
-    font-weight: bold; /* Nombre del producto en negrita */
-  }
-  
-  .carrito-item__botones {
-    white-space: nowrap; /* Evita que los botones se separen en varias líneas */
-  }
+    margin-right: 1rem;           /* Espacio entre la imagen y los detalles */
+}
+
+/* Detalles del producto */
+.carrito-item__detalles {
+    display: flex;                /* Alinea los detalles en una fila */
+    flex-direction: column;       /* Los detalles estarán en columna dentro de su contenedor */
+    flex-grow: 1;                 /* Los detalles ocuparán el espacio restante */
+    margin-right: 1rem;           /* Espacio entre los detalles y los botones */
+}
+
+/* Nombre del producto y otros detalles */
+.carrito-item__nombre,
+.carrito-item__cantidad,
+.carrito-item__precio,
+.carrito-item__subtotal {
+    margin: 0.2rem 0;             /* Espacio entre los elementos dentro de los detalles */
+}
+
+/* Botones de sumar y restar */
+.carrito-item__botones {
+    display: flex;                /* Coloca los botones en línea */
+    align-items: center;          /* Alinea los botones verticalmente */
+    margin-left: auto;            /* Empuja los botones hacia la derecha */
+    justify-content: flex-end;    /* Alinea los botones a la derecha */
+}
+
+.carrito-item__botones button {
+    margin: 0 5px;                /* Espacio entre los botones */
+    padding: 0.5rem 1rem;
+    background-color: var(--primarioOscuro);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.carrito-item__botones button:hover {
+    background-color: var(--textoOscuro);
+}
+
+.carrito-item__botones button:active {
+    background-color: #000;
+}
